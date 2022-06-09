@@ -5,7 +5,6 @@ func numIdenticalPairs(nums []int) int {
         
             count += dict[val]
             dict[val]++
-    fmt.Println(val)
         
     }
     return count

@@ -1,8 +1,8 @@
 func maximumWealth(accounts [][]int) int {
     max:=0
-    for i:=0; i<len(accounts); i++ {
+    for i := range accounts {
         temp:=0
-        for j:=0; j < len(accounts[i]); j++{
+        for j := range accounts[i]{
          temp+= accounts[i][j]   
         }
         max = getMaximum(max,temp)

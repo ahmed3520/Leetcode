@@ -1,15 +1,22 @@
+//2nd sol
 func kidsWithCandies(candies []int, extraCandies int) []bool {
        newArr := make( []bool,0) 
-      newCandies := make( []int, len(candies))
-      copy(newCandies, candies)
-    sort.Ints(newCandies)
+    maximumNumber :=getTheMaxNumberInCandies(candies) 
     for _,val := range candies {
-        if val+extraCandies >= newCandies[len(newCandies)-1] {
+        if val+extraCandies >= maximumNumber{
             newArr =append(newArr, true)
         }else{
             newArr = append(newArr, false)
         }
     }
-    fmt.Println(candies,newCandies)
     return newArr
+}
+func getTheMaxNumberInCandies(nums []int) int {
+    temp := 0
+    for _, val := range nums {
+        if val > temp {
+            temp = val
+        }
+    }
+    return temp
 }

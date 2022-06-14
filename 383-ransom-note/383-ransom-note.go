@@ -1,16 +1,21 @@
+
+
 func canConstruct(ransomNote string, magazine string) bool {
-    newMap := make(map[string]int)
-    for i:=0;i<len(magazine); i++{
-        newMap[string(magazine[i])]++
+    
+    have := [26]int{}
+    
+    for _, char := range magazine {
+        have[char-'a']++
     }
-    fmt.Println(newMap)
-    for i:=0; i <len(ransomNote);i++{
-        newMap[string(ransomNote[i])]--
-         fmt.Println(newMap)
-        
-        if(newMap[string(ransomNote[i])] <0){
+    
+    for _, char := range ransomNote {
+        have[char-'a']--
+        if have[char-'a'] < 0 {
             return false
         }
     }
+    
     return true
+    
 }
+

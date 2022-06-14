@@ -1,13 +1,20 @@
-func SortString(w string) string {
-    s := strings.Split(w, "")
-    sort.Strings(s)
-    return strings.Join(s, "")
-}
 
 func isAnagram(s string, t string) bool {
+	if len(s) != len(t) {
+		return false
+	}
+	store := make([]byte, 26)
+	for i := range s {
+		store[s[i]-'a']++
+		store[t[i]-'a']--
+	}
 
-    if SortString(s) ==SortString(t){
-        return true
-    }
-    return false
+	for i := range store {
+		if store[i] != 0 {
+			return false
+		}
+	}
+	return true
+
 }
+

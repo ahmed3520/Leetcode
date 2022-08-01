@@ -17,7 +17,6 @@ var maxDepth = function(root) {
     }
    let leftRes = maxDepth(root.left)
    let rightRes = maxDepth(root.right)
-   console.log(leftRes,rightRes)
     res=Math.max(leftRes,rightRes)+1
     return res
 };

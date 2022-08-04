@@ -16,8 +16,8 @@ var recoverTree = function(root) {
         if (!root) return;
         dfs(root.left);
         if (prev != null && prev.val > root.val) {
-            min = root; // potential smaller number that needs to be swapped
-            if (!max) max = prev; // assured bigger number that needs to be swapped
+            min = root;
+            if (!max) max = prev; 
             else return;
         }
         prev = root;

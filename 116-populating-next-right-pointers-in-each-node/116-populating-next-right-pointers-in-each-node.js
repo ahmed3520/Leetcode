@@ -14,7 +14,7 @@
  */
 var connect = function(root) {
     //DFS
-    if(!root)
+    /*if(!root)
         return root;
         
     if(root.left != null){
@@ -26,13 +26,21 @@ var connect = function(root) {
     connect(root.left);
     connect(root.right);
     return root
- 
+    */
     //BFS
-    /*if(!root) return root
+    if(!root) return root
     let queue=[root]
     while(queue.length !=0){
+        let next=[]
+        while(queue.length != 0){
         let current = queue.shift()
-        
-    }*/
-
+        current.next = queue[0]||null
+            if(current.left){
+                next.push(current.left)
+                next.push(current.right)
+            }
+        }
+        queue=next
+    }
+return root
 };

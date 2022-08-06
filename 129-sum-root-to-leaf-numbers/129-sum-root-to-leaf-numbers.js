@@ -17,18 +17,14 @@ var sumNumbers = function(root) {
     function helper(root,str){
         str+=root.val
         if(!root.left&&!root.right){
-        console.log("c=> ",str)
             sum+=+str
-        console.log("p=> ",str)
         }
         if(root.left)
         {
             helper(root.left,str)
-            console.log(str)
         }
         if(root.right) {
             helper(root.right,str)
-            console.log("2=>", str)
         }
     }
     helper(root,'')
